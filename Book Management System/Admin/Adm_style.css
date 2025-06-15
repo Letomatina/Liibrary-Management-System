@@ -1,0 +1,142 @@
+                                                      /* Admin_add_book */
+
+.admin_add_books{
+    display: flex;
+    justify-content: center;
+    margin-top: 150px;
+}
+
+/* heading class*/
+.head{
+    text-align: center;
+    margin-top: 4px;
+}
+
+.admin_add_books input {
+    padding: 20px;
+    padding-left: 45px; /* leave space for icon */
+    width: 100%; 
+    border: none;
+    border-bottom: 2px solid rgba(90, 6, 129, 0.39);
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.admin_add_books input:focus {
+    outline: none; /* remove the black border */
+    border-bottom: 2px solid #4B0082;
+    box-shadow: 0 2px 4px rgba(75, 0, 130, 0.3);
+}
+
+
+.admin_add_books form {
+    background-color: rgb(213, 184, 226);
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.admin_add_books button {
+    padding: 20px;
+    width: 100%;
+    margin: 5px 0 0 0;
+    border-radius: 2px;
+    border: none;
+    background-color: #fff;
+    color: #4B0082;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    font-size: 16px;
+}
+
+/* toggle feel */
+.admin_add_books button:hover {
+    background-color: #4B0082;
+    color: white;
+    transform: scale(1.03);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+/* clicking effect */
+.admin_add_books button:active {
+    transform: scale(0.97);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.file {
+    border: none;
+    background: none;
+    outline: none;
+}
+
+
+
+
+
+                                   /* CSS for view books */
+
+/* General page styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 40px;
+    margin: 0;
+}
+
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Table Header */
+table thead {
+    background-color: #4B0082;
+    color: #fff;
+}
+
+table thead th {
+    padding: 16px;
+    text-align: left;
+    font-size: 16px;
+}
+
+/* Table Body */
+table tbody td {
+    padding: 14px 16px;
+    border-bottom: 1px solid #eee;
+    font-size: 15px;
+    color: #333;
+}
+
+/* Table Rows - Hover Effect */
+table tbody tr:hover {
+    background-color: #f1e9ff;
+    transform: scale(1.005);
+    transition: all 0.2s ease;
+}
+
+/* Image Styling */
+table img {
+    height: 80px;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
+}
+
+table img:hover {
+    transform: scale(1.05);
+}
+
