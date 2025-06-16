@@ -3,7 +3,6 @@
     include "db.php";
     session_start();
 
-    // Session validation: if user is already logged in, redirect to dashboard or admin dashboard
     if (isset($_SESSION['email'])) {
         $email = $_SESSION['email'];
         $sql = "SELECT role FROM users WHERE email = '" . mysqli_real_escape_string($conn, $email) . "' LIMIT 1";
@@ -28,11 +27,13 @@
         $password = $_POST["password"];
         $role = $_POST["role"];
 
-        // Check if email already exists
         $check = "SELECT * FROM users WHERE email = '$email'";
         $result = mysqli_query($conn, $check);
 
         if (mysqli_num_rows($result) > 0) {
+
+            //JSript
+            
             echo "<script>alert('Email already exists.'); window.location.href='register.php';</script>";
             exit();
         } else {

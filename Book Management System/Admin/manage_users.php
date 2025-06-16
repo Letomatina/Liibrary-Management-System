@@ -2,7 +2,7 @@
 session_start();
 include "../db.php";
 
-// Session validation: only allow logged-in admin users
+
 if (isset($_SESSION['email'])) {
     $email = $_SESSION['email'];
     $sql = "SELECT role FROM users WHERE email = '" . mysqli_real_escape_string($conn, $email) . "' LIMIT 1";
@@ -21,10 +21,11 @@ if (isset($_SESSION['email'])) {
     exit();
 }
 
-// Fetch all users
 $users_sql = "SELECT * FROM users";
 $users_result = mysqli_query($conn, $users_sql);
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

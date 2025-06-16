@@ -2,7 +2,7 @@
 session_start();
 include "../db.php";
 
-// Session validation: only allow logged-in admin users
+
 if (isset($_SESSION['email'])) {
     $email = $_SESSION['email'];
     $sql = "SELECT role FROM users WHERE email = '" . mysqli_real_escape_string($conn, $email) . "' LIMIT 1";
@@ -21,23 +21,27 @@ if (isset($_SESSION['email'])) {
     exit();
 }
 
-// Get transaction id
+
 if (!isset($_GET['id'])) {
     echo "<div class='delete-container'><div class='delete-message error'>No transaction selected.</div></div>";
     exit();
 }
 $transaction_id = $_GET['id'];
 
-// Handle deletion
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $delete_sql = "DELETE FROM transactions WHERE id = '$transaction_id'";
     if (mysqli_query($conn, $delete_sql)) {
-        echo "<div class='delete-container'><div class='delete-message success'>Transaction deleted successfully.</div><a href='Adashboard.php' class='delete-link'>Go Back to Dashboard</a></div>";
+        echo "<script>alert('Transaction deleted successfully.'); window.location.href='Adashboard.php';</script>";
         exit();
     } else {
-        echo "<div class='delete-container'><div class='delete-message error'>Error deleting transaction: ".mysqli_error($conn)."</div></div>";
+        echo "<script>alert('Error deleting transaction: ".addslashes(mysqli_error($conn))."'); window.location.href='Adashboard.php';</script>";
+        exit();
     }
 }
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

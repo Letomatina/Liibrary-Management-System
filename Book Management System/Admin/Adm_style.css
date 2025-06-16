@@ -1,4 +1,4 @@
-/* Admin_add_book */
+                                                                      /* Admin_add_book */
 
 .admin_add_books{
     display: flex;
@@ -6,7 +6,6 @@
     margin-top: 150px;
 }
 
-/* heading class*/
 .head{
     text-align: center;
     margin-top: 4px;
@@ -14,7 +13,7 @@
 
 .admin_add_books input {
     padding: 20px;
-    padding-left: 45px; /* leave space for icon */
+    padding-left: 45px; 
     width: 100%; 
     border: none;
     border-bottom: 2px solid rgba(90, 6, 129, 0.39);
@@ -23,7 +22,7 @@
 }
 
 .admin_add_books input:focus {
-    outline: none; /* remove the black border */
+    outline: none; 
     border-bottom: 2px solid #4B0082;
     box-shadow: 0 2px 4px rgba(75, 0, 130, 0.3);
 }
@@ -56,7 +55,7 @@
     font-size: 16px;
 }
 
-/* toggle feel */
+
 .admin_add_books button:hover {
     background-color: #4B0082;
     color: white;
@@ -64,7 +63,6 @@
     box-shadow: 0 6px 12px rgba(0,0,0,0.2);
 }
 
-/* clicking effect */
 .admin_add_books button:active {
     transform: scale(0.97);
     box-shadow: 0 2px 4px rgba(0,0,0,0.3);
@@ -82,7 +80,7 @@
 
                                    /* CSS for view books */
 
-/* General page styling */
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
@@ -91,7 +89,7 @@ body {
 }
 
 
-/* Table Styling */
+
 table {
     width: 100%;
     border-collapse: collapse;
@@ -102,7 +100,7 @@ table {
     margin-top: 30px;
 }
 
-/* Table Header */
+
 table thead {
     background-color: #4B0082;
     color: #fff;
@@ -114,7 +112,7 @@ table thead th {
     font-size: 16px;
 }
 
-/* Table Body */
+
 table tbody td {
     padding: 14px 16px;
     border-bottom: 1px solid #eee;
@@ -122,14 +120,14 @@ table tbody td {
     color: #333;
 }
 
-/* Table Rows - Hover Effect */
+
 table tbody tr:hover {
     background-color: #f1e9ff;
     transform: scale(1.005);
     transition: all 0.2s ease;
 }
 
-/* Image Styling */
+
 table img {
     height: 80px;
     border-radius: 6px;
@@ -141,7 +139,6 @@ table img:hover {
     transform: scale(1.05);
 }
 
-/* Navigation for Add Books - Dashboard & Logout */
 .add-books-nav {
     display: flex;
     justify-content: center;

@@ -52,16 +52,19 @@ if(isset($_GET['book_id'])){
     if ($check_result && mysqli_num_rows($check_result) > 0) {
         echo "You have already borrowed this book and not returned it yet.";
     } else {
-        // Insert borrow transaction with user_name
+       
         $sql = "INSERT INTO transactions (user_id, user_name, book_id, issue_date, status) VALUES ('$user_id', '$user_name', '$book_id', CURDATE(), 'borrowed')";
         $result = mysqli_query($conn, $sql);
         
         if (!$result) {
             echo "Error! " . mysqli_error($conn);
         } else {
-            // Decrease book quantity by 1
+           
             $update_sql = "UPDATE books SET quantity = quantity - 1 WHERE id = '$book_id' AND quantity > 0";
             mysqli_query($conn, $update_sql);
+
+
+            //JScript
             echo "<script>alert('Request Sent.'); window.location.href='index.php';</script>";
             exit();
         }

@@ -9,6 +9,11 @@ $result = mysqli_query($conn, $sql);
 $is_logged_in = isset($_SESSION['email']);
 
 ?>
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

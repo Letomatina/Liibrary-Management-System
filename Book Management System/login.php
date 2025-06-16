@@ -3,7 +3,7 @@
 session_start();
 include "db.php";
 
-// Session validation: if user is already logged in, redirect to dashboard or admin dashboard
+
 if (isset($_SESSION['email'])) {
     $email = $_SESSION['email'];
     $sql = "SELECT role FROM users WHERE email = '" . mysqli_real_escape_string($conn, $email) . "' LIMIT 1";
@@ -42,8 +42,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 $_SESSION['email'] = $user['email'];
                 $_SESSION['role'] = $user['role'];
 
-                // directing based on role
                 if ($user['role'] == 'admin') {
+
+                    //JScript
+
                     echo "<script>alert('Logged in successfully.'); window.location.href='Admin/Adashboard.php';</script>";
                 } else {
                     echo "<script>alert('Logged in successfully.'); window.location.href='dashboard.php';</script>";

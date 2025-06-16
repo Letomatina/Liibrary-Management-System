@@ -2,7 +2,6 @@
 session_start();
 include "../db.php";
 
-// Session validation: only allow logged-in admin users
 if (isset($_SESSION['email'])) {
     $email = $_SESSION['email'];
     $sql = "SELECT role FROM users WHERE email = '" . mysqli_real_escape_string($conn, $email) . "' LIMIT 1";
@@ -21,14 +20,13 @@ if (isset($_SESSION['email'])) {
     exit();
 }
 
-// Get transaction id
 if (!isset($_GET['id'])) {
     echo "No transaction selected.";
     exit();
 }
 $transaction_id = $_GET['id'];
 
-// Handle form submission
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $return_date = $_POST['return_date'];
     $status = isset($_POST['status']) ? $_POST['status'] : $trans['status'];
@@ -42,11 +40,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-// Fetch current transaction info
 $trans_sql = "SELECT * FROM transactions WHERE id = '$transaction_id'";
 $trans_result = mysqli_query($conn, $trans_sql);
 $trans = mysqli_fetch_assoc($trans_result);
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

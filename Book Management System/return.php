@@ -29,16 +29,19 @@ if (isset($_SESSION['email'])) {
 if(isset($_GET['book_id'])){
     $book_id = $_GET['book_id'];
 
-    // Check if the user has borrowed this book and not yet returned it
+    
     $check_sql = "SELECT * FROM transactions WHERE user_id = '$user_id' AND book_id = '$book_id' AND status = 'borrowed'";
     $check_result = mysqli_query($conn, $check_sql);
 
     if ($check_result && mysqli_num_rows($check_result) > 0) {
-        // Mark the transaction as returned
+       
         $update_sql = "UPDATE transactions SET status = 'returned', return_date = CURDATE() WHERE user_id = '$user_id' AND book_id = '$book_id' AND status = 'borrowed'";
         $update_result = mysqli_query($conn, $update_sql);
         if ($update_result) {
-            // Increase book quantity by 1
+           
+
+            //jScript
+            
             $qty_sql = "UPDATE books SET quantity = quantity + 1 WHERE id = '$book_id'";
             mysqli_query($conn, $qty_sql);
             echo "<script>alert('Book returned successfully.'); window.location.href='index.php';</script>";

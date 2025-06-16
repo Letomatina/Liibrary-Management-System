@@ -2,13 +2,13 @@
 session_start();
 include "../db.php";
 
-// Session validation: only allow logged-in admin users
+
 if (!isset($_SESSION['email'])) {
     header("Location: ../login.php");
     exit();
 }
 
-// Check if the logged-in user is admin
+
 $email = $_SESSION['email'];
 
 $sql_admin = "SELECT role FROM users WHERE email = '" . mysqli_real_escape_string($conn, $email) . "' LIMIT 1";
