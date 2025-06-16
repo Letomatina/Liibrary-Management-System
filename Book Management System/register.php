@@ -28,29 +28,23 @@
         $password = $_POST["password"];
         $role = $_POST["role"];
 
-        $sql = "INSERT INTO users(name, email, password, role) VALUES('$name', '$email', '$password', '$role')";
-
-        $result = mysqli_query($conn, $sql);
- 
-        //to check connection:
-
-        if(!$result){
-            echo "Error! " . mysqli_error($conn); 
-        } else {
-            echo "Registered Successfully.\n"; 
-        }
-
-        //insertion of same email
-
+        // Check if email already exists
         $check = "SELECT * FROM users WHERE email = '$email'";
-             $result = mysqli_query($conn, $check);
+        $result = mysqli_query($conn, $check);
 
-             if (mysqli_num_rows($result) > 0) {
-                echo "Email already exists.\n";
+        if (mysqli_num_rows($result) > 0) {
+            echo "<script>alert('Email already exists.'); window.location.href='register.php';</script>";
+            exit();
+        } else {
+            $sql = "INSERT INTO users(name, email, password, role) VALUES('$name', '$email', '$password', '$role')";
+            $result = mysqli_query($conn, $sql);
+            if(!$result){
+                echo "<script>alert('Error! " . addslashes(mysqli_error($conn)) . "'); window.location.href='register.php';</script>";
             } else {
-                // proceed with insert
+                echo "<script>alert('Registered Successfully.'); window.location.href='login.php';</script>";
             }
-
+            exit();
+        }
     }
 
 ?>

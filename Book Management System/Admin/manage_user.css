@@ -1,0 +1,72 @@
+/* manage_user.css - based on styles.css theme */
+body {
+    background: url('../Image/back.jpg') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    color: #2d014d;
+}
+
+.manage-users-container {
+    margin: 40px auto 0 auto;
+    max-width: 900px;
+    background: rgb(213, 184, 226);
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    padding: 30px 40px;
+}
+
+.manage-users-title {
+    text-align: center;
+    color: #4B0082;
+    margin-bottom: 24px;
+}
+
+.manage-users-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+.manage-users-table th, .manage-users-table td {
+    padding: 14px 18px;
+    text-align: left;
+    font-size: 15px;
+    color: #333;
+}
+
+.manage-users-table th {
+    background: #4B0082;
+    color: #fff;
+    font-weight: 600;
+}
+
+.manage-users-table tr:nth-child(even) {
+    background: #f0f3fa;
+}
+
+.manage-users-table tr:hover {
+    background: #e6ecfa;
+}
+
+.manage-users-btn {
+    background: #4B0082;
+    color: #fff;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.2s;
+    text-decoration: none;
+    margin-right: 8px;
+}
+.manage-users-btn:last-child {
+    margin-right: 0;
+}
+.manage-users-btn:hover {
+    background: #a259c6;
+}

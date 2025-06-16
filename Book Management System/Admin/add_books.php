@@ -3,9 +3,8 @@
 session_start();
 include "../db.php";
 
-// Session validation: only allow logged-in admin users
+
 if (isset($_SESSION['email'])) {
-    // Get user role from database
     $email = $_SESSION['email'];
     $sql = "SELECT role FROM users WHERE email = '" . mysqli_real_escape_string($conn, $email) . "' LIMIT 1";
     $result = mysqli_query($conn, $sql);
@@ -14,14 +13,12 @@ if (isset($_SESSION['email'])) {
         $row = mysqli_fetch_assoc($result);
         $role = $row['role'];
     }
-    // Check if user is admin
+
     if ($role != 'admin') {
-        // Redirect non-admin to user dashboard
         header("Location: ../dashboard.php");
         exit();
     }
 } else {
-    // If not logged in, send to login
     header("Location: ../login.php");
     exit();
 }
@@ -39,22 +36,13 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             VALUES('$title', '$author', '$isbn', '$image', '$quantity')";
     $result = mysqli_query($conn, $sql);
 
-    /* 
-    $allowed_types = ['image/jpeg', 'image/png', 'image/jpg'];
-          
-         if (in_array($_FILES['image']['type'], $allowed_types)) {
-                move_uploaded_file($image_location, $upload_location . $image);
-          } else {
-                echo "Only JPG and PNG files are allowed.";
-          }   
-          
-          */
+   
 
     if (!$result) {
-        echo "Error! " . mysqli_error($conn);
+        echo "<script>alert('Error! " . addslashes(mysqli_error($conn)) . "');</script>";
     } else {
         move_uploaded_file($image_location, $upload_location . $image);
-        echo "Book added successfully.";
+        echo "<script>alert('Book added successfully.');</script>";
     }
 }
 
@@ -72,7 +60,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 </head>
 <body>
     <div class="admin_add_books">
-
         <form action="add_books.php" method="post" enctype="multipart/form-data">
          <h2 class="head">ADD BOOKS</h2>
             <input type="text" name="title" placeholder="Title"><br>
@@ -80,9 +67,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             <input type="text" name="isbn" placeholder="ISBN"><br> 
             <input type="text" name="quantity" placeholder="Quantity"><br>
             <input class="file" type="file" name="image"><br>
-           
             <button type="submit">Add Book</button>
-
+            <div class="add-books-nav">
+                <a href="Adashboard.php">Back to Admin Dashboard</a>
+                <a href="../logout.php">Log Out</a>
+            </div>
         </form>
     </div> 
 </body>

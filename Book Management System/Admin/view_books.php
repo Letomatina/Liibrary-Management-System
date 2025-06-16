@@ -44,6 +44,10 @@ if (!$result) {
     <link rel="stylesheet" href="/Book Management System/Admin/Adm_style.css">
 </head>
 <body>
+    <div class="add-books-nav">
+        <a href="Adashboard.php">Back to Admin Dashboard</a>
+        <a href="../logout.php">Log Out</a>
+    </div>
     <table class="">
         <thead>
             <tr>

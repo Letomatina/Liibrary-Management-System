@@ -1,0 +1,247 @@
+/* Udash.css - User Dashboard Styles
+   Consistent with project color theme and UX patterns */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #f4f6fb;
+    color: #222;
+}
+
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 220px;
+    background: linear-gradient(180deg, #3a5ca8 0%, #274472 100%);
+    color: #fff;
+    padding: 30px 0 0 0;
+    box-shadow: 2px 0 8px rgba(0,0,0,0.04);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar h2 {
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+    letter-spacing: 1px;
+}
+
+.sidebar a {
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 30px;
+    margin: 8px 0;
+    border-radius: 6px;
+    display: block;
+    transition: background 0.2s;
+    font-size: 1.05rem;
+}
+
+.sidebar a.active, .sidebar a:hover {
+    background: #1e3357;
+}
+
+.main-content {
+    flex: 1;
+    padding: 40px 50px;
+    background: #f4f6fb;
+}
+
+h1, h2, h3 {
+    color: #274472;
+    margin-top: 0;
+}
+
+.dashboard-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+.dashboard-table th, .dashboard-table td {
+    padding: 14px 18px;
+    text-align: left;
+}
+
+.dashboard-table th {
+    background: #3a5ca8;
+    color: #fff;
+    font-weight: 600;
+}
+
+.dashboard-table tr:nth-child(even) {
+    background: #f0f3fa;
+}
+
+.dashboard-table tr:hover {
+    background: #e6ecfa;
+}
+
+.button, .dashboard-table .action-btn {
+    background: #3a5ca8;
+    color: #fff;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.2s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.button:hover, .dashboard-table .action-btn:hover {
+    background: #274472;
+}
+
+.logout-btn {
+    margin-top: auto;
+    margin-bottom: 30px;
+    background: #e74c3c;
+    color: #fff;
+    padding: 10px 22px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.2s;
+}
+
+.logout-btn:hover {
+    background: #c0392b;
+}
+
+.user_dashboard_layout {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    padding: 40px 5vw 40px 5vw;
+}
+
+.user_nav {
+    background: #4B0082;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(75,0,130,0.10);
+    padding: 32px 24px;
+    min-width: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    height: fit-content;
+}
+
+.user_nav .nav-btn {
+    display: block;
+    background: #fff;
+    color: #4B0082;
+    font-weight: bold;
+    text-align: center;
+    padding: 16px 0;
+    border-radius: 6px;
+    text-decoration: none;
+    box-shadow: 0 2px 6px rgba(75,0,130,0.08);
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+    font-size: 1.08rem;
+    margin-bottom: 18px;
+    border: none;
+    cursor: pointer;
+}
+
+.user_nav .nav-btn:hover {
+    background: #4B0082;
+    color: #fff;
+    transform: scale(1.04);
+}
+
+.user_nav .logout-btn {
+    background: #fff;
+    color: #4B0082;
+    font-weight: bold;
+    border: 2px solid #4B0082;
+    border-radius: 6px;
+    padding: 14px 0;
+    cursor: pointer;
+    font-size: 1.08rem;
+    margin-top: 10px;
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+    width: 100%;
+    align-self: center;
+    display: flex;
+    justify-content: center;
+}
+
+.user_nav .logout-btn:hover {
+    background: #4B0082;
+    color: #fff;
+    transform: scale(1.04);
+}
+
+.user_main_content {
+    flex: 1;
+    min-width: 0;
+}
+
+.head {
+    text-align: center;
+    margin-top: 0;
+    color: #4B0082;
+    font-size: 2rem;
+    margin-bottom: 24px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+table thead {
+    background-color: #4B0082;
+    color: #fff;
+}
+
+table thead th {
+    padding: 16px;
+    text-align: left;
+    font-size: 16px;
+}
+
+table tbody td {
+    padding: 14px 16px;
+    border-bottom: 1px solid #eee;
+    font-size: 15px;
+    color: #333;
+}
+
+table tbody tr:hover {
+    background-color: #f1e9ff;
+    transform: scale(1.005);
+    transition: all 0.2s ease;
+}
+
+@media (max-width: 900px) {
+    .dashboard-container {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 15px 0;
+    }
+    .main-content {
+        padding: 20px 10px;
+    }
+}

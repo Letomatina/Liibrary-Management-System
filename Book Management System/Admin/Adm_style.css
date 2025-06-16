@@ -1,4 +1,4 @@
-                                                      /* Admin_add_book */
+/* Admin_add_book */
 
 .admin_add_books{
     display: flex;
@@ -99,6 +99,7 @@ table {
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     border-radius: 8px;
     overflow: hidden;
+    margin-top: 30px;
 }
 
 /* Table Header */
@@ -138,5 +139,34 @@ table img {
 
 table img:hover {
     transform: scale(1.05);
+}
+
+/* Navigation for Add Books - Dashboard & Logout */
+.add-books-nav {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 10px;
+    margin-top: 16px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.add-books-nav a {
+    background: none;
+    color: #4B0082;
+    padding: 0;
+    border-radius: 0;
+    text-decoration: underline;
+    font-weight: normal;
+    border: none;
+    font-size: 14px;
+    transition: color 0.2s;
+}
+
+.add-books-nav a:hover {
+    color: #a259c6;
+    text-decoration: none;
 }
 

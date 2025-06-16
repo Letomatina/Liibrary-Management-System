@@ -1,0 +1,103 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #fff;
+    color: #2d014d;
+}
+
+.transaction-table-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    min-height: 80vh;
+}
+
+.transaction-table {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    padding: 30px 40px;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.transaction-table h2 {
+    text-align: center;
+    margin-bottom: 24px;
+    color: #4B0082;
+    font-size: 2rem;
+}
+
+.transaction-table table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+.transaction-table th, .transaction-table td {
+    padding: 14px 18px;
+    text-align: left;
+    font-size: 15px;
+    color: #333;
+}
+
+.transaction-table th {
+    background: #4B0082;
+    color: #fff;
+    font-weight: 600;
+}
+
+.transaction-table tr:nth-child(even) {
+    background: #f0f3fa;
+}
+
+.transaction-table tr:hover {
+    background: #e6ecfa;
+}
+
+.transaction-table .action-btn {
+    background: #4B0082;
+    color: #fff;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.2s;
+    text-decoration: none;
+    display: inline-block;
+    margin-right: 8px;
+}
+.transaction-table .action-btn:last-child {
+    margin-right: 0;
+}
+.transaction-table .action-btn:hover {
+    background: #a259c6;
+}
+.transaction-table .delete-btn {
+    background: #e74c3c;
+    color: #fff;
+    border: none;
+}
+.transaction-table .delete-btn:hover {
+    background: #c0392b;
+    color: #fff;
+}
+
+@media (max-width: 900px) {
+    .transaction-table {
+        padding: 16px 4px;
+        max-width: 98vw;
+    }
+    .transaction-table-container {
+        margin-top: 10px;
+    }
+}

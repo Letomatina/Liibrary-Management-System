@@ -10,7 +10,7 @@ if (isset($_SESSION['email'])) {
     $result = mysqli_query($conn, $sql);
     $role = '';
 
-
+    
     if ($result && mysqli_num_rows($result) > 0) {
         $row = mysqli_fetch_assoc($result);
         $role = $row['role'];
@@ -22,7 +22,6 @@ if (isset($_SESSION['email'])) {
     }
     exit();
 }
-
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $email = $_POST["email"];
@@ -43,24 +42,20 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 $_SESSION['email'] = $user['email'];
                 $_SESSION['role'] = $user['role'];
 
-               
-
                 // directing based on role
-                     if ($user['role'] == 'admin') {
-                         header("Location: Admin/Adashboard.php");
-                     } else {
-                         header("Location: dashboard.php");
-                     } 
-                     
-                     echo "Logged in successfully.";
-
+                if ($user['role'] == 'admin') {
+                    echo "<script>alert('Logged in successfully.'); window.location.href='Admin/Adashboard.php';</script>";
+                } else {
+                    echo "<script>alert('Logged in successfully.'); window.location.href='dashboard.php';</script>";
+                }
                 exit();
             } else {
-                echo "Incorrect password.";
+                echo "<script>alert('Incorrect password.'); window.location.href='login.php';</script>";
+                exit();
             }
-
         } else {
-            echo "No user found with that email.";
+            echo "<script>alert('No user found with that email.'); window.location.href='login.php';</script>";
+            exit();
         }
     }
 }

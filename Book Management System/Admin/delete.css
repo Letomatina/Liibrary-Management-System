@@ -1,0 +1,89 @@
+body {
+    background: #fff;
+    min-height: 100vh;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.delete-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 120px;
+}
+
+.delete-form {
+    background-color: #ffeaea;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.delete-form h2 {
+    text-align: center;
+    margin-bottom: 18px;
+    color: #b30000;
+}
+
+.delete-form p {
+    color: #4B0082;
+    margin-bottom: 18px;
+    text-align: center;
+}
+
+.delete-btn {
+    padding: 16px;
+    width: 100%;
+    border-radius: 2px;
+    border: none;
+    background-color: #b30000;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.08);
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+.delete-btn:hover {
+    background-color: #4B0082;
+    color: #fff;
+    transform: scale(1.03);
+}
+
+.delete-link {
+    display: block;
+    text-align: center;
+    color: #4B0082;
+    text-decoration: underline;
+    font-weight: bold;
+    transition: color 0.2s;
+    margin-top: 8px;
+}
+
+.delete-link:hover {
+    color: #b30000;
+}
+
+.delete-message {
+    padding: 18px 24px;
+    border-radius: 8px;
+    margin-bottom: 18px;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+.delete-message.success {
+    background: #e6ffe6;
+    color: #1a7a1a;
+}
+
+.delete-message.error {
+    background: #ffeaea;
+    color: #b30000;
+}
